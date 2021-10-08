@@ -1,0 +1,39 @@
+<%- include('../partials/usernavbarheader.ejs') %>
+<div class="container my-5">
+  <form method="POST" action="/sharedwith/<%= noteidd.noteid %>">
+   
+    <input
+      class="form-control me-2"
+      name="email"
+      type="search"
+      placeholder="Enter Email"
+      aria-label="Search"
+    />
+    <button class="btn btn-outline-success my-3" type="submit" class="d_inline">
+      Search
+    </button>
+  </form>
+
+  <hr />
+  <h3 class="my-3">You can Share along with these Usernames</h3>
+  <hr/>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Username</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < users.length; i++) { %>
+      <tr>
+        <th scope="row"><%= i+1 %></th>
+        <td><%= users[i].email %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  
+</div>
+<%- include('../partials/usernavbarfooter.ejs') %>

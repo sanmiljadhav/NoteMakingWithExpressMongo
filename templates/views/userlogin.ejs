@@ -1,0 +1,85 @@
+
+<%- include('../partials/navbarheader.ejs') %>
+<style>
+    /* #ff9800  */
+    .warning {
+        border-color: rgb(9, 255, 0);
+        color: rgb(9, 255, 0);
+    }
+
+    .warning:hover {
+        background: rgb(9, 255, 0);
+        color: white;
+    }
+
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="text-center" style="font-family: cursive;font-weight: bold;">New User..</h2>
+            <hr>
+            <h5 class="text-center" style="font-family: cursive;font-weight: bold;">If U are New User Please Create an Account By clicking this Button Below..</h5>
+            <a href="/register"><button class="btn warning">Create an Account</button></a>
+        </div>
+
+        <div class="col-sm-6">
+            <h2 class="text-center" style="font-family: cursive;font-weight: bold;">User Login</h2>
+            <hr>
+            <form method="POST" action="/login">
+                
+                <div class="mb-3">
+                  <label for="email" class="form-label" style="font-family: cursive;font-weight: bold;">Email address</label>
+                  <input type="email" name="emailid" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label" style="font-family: cursive;font-weight: bold;">Password</label>
+                  <input type="password" name="pwd" class="form-control" id="password" placeholder="Enter password">
+                </div>
+                
+                <button type="submit" class="btn warning">Submit</button>
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<!--
+{% ifequal error "no" %}
+<script>
+  alert("Logged in Successfully");
+  window.location.href='/userprofile';
+
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+  alert("Something went wrong, Try Again");
+</script>
+{% endifequal %}
+-->
+
+<%- include('../partials/navbarfooter.ejs') %>
+
+

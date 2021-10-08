@@ -1,0 +1,19 @@
+const path = require('path')
+
+//console.log(path.resolve(__dirname,"assests/css");
+
+// f:\mern\usermanagementsystem\assests\css
+
+//console.log('/css',path.resolve(__dirname,"assests/css"))
+
+// css/style.css
+
+
+//console.log(path.join(__dirname, "server/routes/router.js"));
+
+
+//const a = require('./server/routes/router')
+//console.log(a)
+//let reqPath = path.join(__dirname, '../../');
+//console.log("is",reqPath);
+//console.log(path.resolve(__dirname))

@@ -1,0 +1,24 @@
+<%- include('../partials/usernavbarheader.ejs') %>
+<div class="container my-3">
+    
+        <form action="/userprofile/<%= notes._id %>" method="POST">  
+                    
+            <div class="mb-3">
+              <label for="title" class="form-label" style="font-family: cursive;font-weight: bold;">Enter Note Title</label>
+              <input type="text" name="notetitle" class="form-control" id="title" value="<%= notes.notetitle %>" placeholder="Enter Note Title">
+              
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label" style="font-family: cursive;font-weight: bold;">Enter Note Description</label>
+              <input type="text" name="notedesc" class="form-control" id="description" value="<%= notes.notedescription %>" placeholder="Enter Note Description">
+            </div>
+           
+            
+            <button type="submit" class="btn btn-warning">Add Note</button>
+        </form>
+
+
+
+</div>
+
+<%- include('../partials/usernavbarfooter.ejs') %>

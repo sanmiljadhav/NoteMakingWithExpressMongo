@@ -1,0 +1,43 @@
+<%- include('../partials/usernavbarheader.ejs') %>
+<div class="container">
+    <div class="row my-3">
+        <% for(var i=0; i < notes.length; i++) { %>
+          <div class="col-md-4">
+    
+           
+              <div class="card my-3" style="width: 18rem;">
+                
+                  <div class="card-body">
+                    
+                    
+                     
+                      <h5 class="card-title"> <%= notes[i].notetitle %>            </h5>
+                      
+                      <p class="card-text"><%= notes[i].notedescription %></p>
+                      <!-- Update -->
+                      <a href="/userprofile/<%= notes[i]._id %>" class="btn btn-warning btn-sm">Edit</a>
+    
+                      
+                      <!--
+                      
+                      <form action="{% url 'notesdelete' item.id %}" method="POST" class="d-inline"> 
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-primary btn-sm" value="Delete">
+                      </form>
+                      -->
+                      
+                  </div>
+                 
+              </div>
+             
+             
+    
+             
+              
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+
+<%- include('../partials/usernavbarfooter.ejs') %>

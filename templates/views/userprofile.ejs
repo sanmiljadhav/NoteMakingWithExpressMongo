@@ -1,0 +1,92 @@
+<%- include('../partials/usernavbarheader.ejs') %>
+<style>
+    /* #ff9800  */
+    .warning {
+        border-color: rgb(9, 255, 0);
+        color: rgb(9, 255, 0);
+    }
+
+    .warning:hover {
+        background: rgb(9, 255, 0);
+        color: white;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+</style>
+<div class="container">
+    <h1>Welcome <span>hello <%= name %></span>   </h1>
+<span>   <a href="/logout">Logout</a></span>
+<form  action = "/userprofile/" method="POST">
+    <form method="POST" action="/userprofile">
+                
+        <div class="mb-3">
+          <label for="title" class="form-label" style="font-family: cursive;font-weight: bold;">Enter Note Title</label>
+          <input type="text" name="notetitle" class="form-control" id="title" placeholder="Enter Note Title">
+          
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label" style="font-family: cursive;font-weight: bold;">Enter Note Description</label>
+          <input type="text" name="notedesc" class="form-control" id="description" placeholder="Enter Note Description">
+        </div>
+        
+        <button type="submit" class="btn warning">Add Note</button>
+    </form>
+
+   <!--
+    <table>
+      <% for(var i=0; i < notes.length; i++) { %>
+         <tr>
+           <td><%= notes[i].notetitle %></td>
+           <td><%= notes[i].notedescription %></td>
+         </tr>
+      <% } %>
+      </table>
+      -->
+
+
+
+
+
+
+<div class="row my-3">
+  <% for(var i=0; i < notes.length; i++) { %>
+    <div class="col-md-4">
+
+     
+        <div class="card my-3" style="width: 18rem;">
+          
+            <div class="card-body">
+              <a href="/sharedwith/<%= notes[i]._id %>"><span style='font-size:40px; ' class="d-inline">&#8594;</span></a>
+              
+               
+                <h5 class="card-title"> <%= notes[i].notetitle %>             </h5>
+                
+                <p class="card-text"><%= notes[i].notedescription %></p>
+                <!-- Update -->
+                <a href="/userprofile/<%= notes[i]._id %>" class="btn btn-warning btn-sm">Edit</a>
+                
+                   <!-- Delete -->
+                
+                <form method="POST" class="d-inline" action="/delete/<%= notes[i]._id %>">
+                  <input type="submit" class="btn btn-primary btn-sm " value="Delete">
+                </form>
+                
+            </div>
+           
+        </div>
+        
+       
+       
+
+       
+        
+    </div>
+    <% } %>
+   
+</div>
+</div>
+
+<%- include('../partials/usernavbarfooter.ejs') %>
